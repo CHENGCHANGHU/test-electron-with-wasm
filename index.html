@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="icon" href="./assets/sparrow.png">
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <!-- <script src="./wasm_in_rust/pkg/wasm_in_rust.js" type="module"></script> -->
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    We are using node <script>document.write(process.versions.node)</script>,
+    Chrome <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+    <pre>
+      test-electron-with-wasm
+      1、git建仓库，git clone 到本地；
+      2、npm init 初始化为 node 项目，npm install --save-dev electron 安装 electron，package.json 中配置 electron 的入口文件；
+      3、npm link 将本地 node 项目添加到全局，并在 package.json 中配置入口命令；
+      4、安装 rust，cargo new wasm_in_rust 新建 rust crate，cargo install wasm-pack 安装 wasm-pack；
+      5、wasm-pack build --release --target web 构建 wasm_in_rust（以非 bundler 方式运行）；
+      6、在 type=module 的 js 脚本中导入运行。
+    </pre>
+  </body>
+  <script type="module">
+    import { default as init, greet } from './wasm_in_rust/pkg/wasm_in_rust.js';
+    init().then(() => {
+      greet("WebAssembly");
+    });
+  </script>
+</html>

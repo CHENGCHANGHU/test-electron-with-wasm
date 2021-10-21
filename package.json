@@ -1,0 +1,30 @@
+{
+  "name": "test-electron-with-wasm",
+  "version": "1.0.0",
+  "description": "test electron with wasm",
+  "main": "index.js",
+  "bin": {
+    "test-electron-with-wasm": "index.js"
+  },
+  "scripts": {
+    "start": "electron main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CHENGCHANGHU/test-electron-with-wasm.git"
+  },
+  "keywords": [
+    "electron",
+    "wasm"
+  ],
+  "author": "tigercheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CHENGCHANGHU/test-electron-with-wasm/issues"
+  },
+  "homepage": "https://github.com/CHENGCHANGHU/test-electron-with-wasm#readme",
+  "devDependencies": {
+    "electron": "^15.2.0"
+  }
+}

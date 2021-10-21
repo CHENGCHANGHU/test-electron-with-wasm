@@ -1,0 +1,1 @@
+/Users/changhu.cheng/TigerCheng/test-electron-with-wasm/wasm_in_rust/target/wasm32-unknown-unknown/release/wasm_in_rust.wasm: /Users/changhu.cheng/TigerCheng/test-electron-with-wasm/wasm_in_rust/src/lib.rs
